@@ -1,4 +1,16 @@
+def upper_traingle(n): 
+    for i in range(n): 
+        for j in range(i): 
+            print("*",end="")
+        print() 
+
 def lower_traingle(n): 
+    for i in range(n): 
+        for j in range(i,n): 
+            print("*",end="")
+        print()              
+
+def lower_pyramid(n): 
      for i in range(n): 
         for j in range(i,n): 
             print(" ",end="")
@@ -8,7 +20,7 @@ def lower_traingle(n):
             print("*",end="")    
         print()  
 
-def upper_traingle(n): 
+def upper_pyramid(n): 
      for i in range(n,0,-1): 
         for j in range(i,n): 
             print(" ",end="")
@@ -18,10 +30,6 @@ def upper_traingle(n):
             print("*",end="")    
         print()
 
-
-def draw_pyramid(n):    
-      lower_traingle(n)
-      upper_traingle(n)
     
 
 try :
@@ -31,14 +39,17 @@ try :
     if n < 1:
         raise ValueError("Pyramid height must be a positive integer.")
     print("Upper triangular : ") 
-    lower_traingle(n)
+    upper_traingle(n)
     print()
     print("Lower triangular : ")
     print()
-    upper_traingle(n)
+    lower_traingle(n)
     print()
     print("The pyramid: ")
-    draw_pyramid(n)
+    lower_pyramid(n)
+    print() 
+    print("down pyramid") 
+    upper_pyramid(n)
 
 except ValueError as e:
     print("Error:", e)    
